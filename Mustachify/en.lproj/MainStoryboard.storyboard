@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="F4r-4O-y5E">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <viewController id="2" customClass="ImageFetcherViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your query" minimumFontSize="17" id="i4S-aw-6wF">
+                                <rect key="frame" x="20" y="48" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tiP-3D-Rse">
+                                <rect key="frame" x="76" y="119" width="168" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Pick random image">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PT0-cC-BI9" kind="push" id="Mlz-lD-kFw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mustachify" id="tlS-aj-QKc"/>
+                    <connections>
+                        <outlet property="searchField" destination="i4S-aw-6wF" id="daS-CP-NUH"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="508" y="-66"/>
+        </scene>
+        <scene sceneID="Rn4-wg-k8J">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgv-Fa-wS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="PT0-cC-BI9" customClass="ImageDisplayViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CzI-2h-pQx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" id="eZp-VV-VGW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="3gI-aU-ReS">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="422"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="PT0-cC-BI9" id="LiN-xo-br2"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jPu-Yu-dVf">
+                        <barButtonItem key="rightBarButtonItem" title="~" id="K5N-Bm-Itg">
+                            <connections>
+                                <action selector="processImage:" destination="PT0-cC-BI9" id="ptd-iu-p1N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="3gI-aU-ReS" id="43A-1e-abp"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="946" y="-66"/>
+        </scene>
+        <scene sceneID="ijI-ea-0rO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6PE-oa-CPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="F4r-4O-y5E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackOpaque" id="XQO-eN-9RB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="4F4-SV-oGW"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="13" y="-66"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="ImageDisplayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageDisplayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="processImage:"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="ImageFetcherViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ImageFetcherViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
