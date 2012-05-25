@@ -1,6 +1,6 @@
 # Mustachify iOS
 
-Introduction about iOS 5, Objective-C and Xcode 4. Slides in [SpeakerDeck][s].
+Introduction to iOS 5, Objective-C and Xcode 4. Slides in [SpeakerDeck][s].
 
 
 ## Author
